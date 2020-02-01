@@ -10,8 +10,8 @@ import Injector
 
 struct ServiceConfigurator {
     static func configure(injector: Injector) throws {
-        _ = try? Environment.injector.register(as: PFoo.self, injectable: .lazySingleton(nil, { Foo() }))
-        _ = try? Environment.injector.unregister(type: PFoo.self)
-        _ = try? Environment.injector.register(as: PFoo.self, injectable: .factory({ Bar() }))
+        _ = try? Environment.services
+            .register(as: PServiceA.self, injectable: .singleton(ServiceA()))
+            .register(as: PServiceB.self, injectable: .factory({ ServiceB() }))
     }
 }

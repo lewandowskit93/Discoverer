@@ -12,21 +12,23 @@ class ViewController: NSViewController {
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         //swiftlint:disable force_try
-        try! ServiceConfigurator.configure(injector: Environment.injector)
+        try! ServiceConfigurator.configure(injector: Environment.services)
+        try! RepositoriesConfigurator.configure(injector: Environment.repositories)
+
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         //swiftlint:disable force_try
-        try! ServiceConfigurator.configure(injector: Environment.injector)
+        try! ServiceConfigurator.configure(injector: Environment.services)
+        try! RepositoriesConfigurator.configure(injector: Environment.repositories)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fooVM = FooViewModel<Environment>()
-        let barVM = BarViewModel()
-        fooVM.foo.foo()
-        barVM.foo.foo()
+        let fooVM = FooViewModel()
+        fooVM.viewDidLoad()
     }
     
     override var representedObject: Any? {

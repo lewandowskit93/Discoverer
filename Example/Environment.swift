@@ -8,6 +8,7 @@
 
 import Injector
 
-struct Environment: PInjectorProvider {
-    static var injector: Injector = Injector()
+struct Environment {
+    static var services: Injector = Injector()
+    static var repositories: Injector = Injector()
 }
