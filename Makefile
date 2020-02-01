@@ -11,7 +11,6 @@ bundler:
 generate:
 	@xcodegen generate
 	@bundle exec pod install
-	@make sourcery
 
 define brew_install
 	@echo "--- Installing $(1)..."

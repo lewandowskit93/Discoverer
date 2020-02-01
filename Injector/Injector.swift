@@ -12,7 +12,12 @@ public final class Injector {
     private var lazySingletons: [ObjectIdentifier: Factory] = [:]
     private var factories: [ObjectIdentifier: Factory] = [:]
     
+    public init() {
+        
+    }
+    
     public func unsafeGet<T>() -> T {
+        //swiftlint:disable force_try
         return try! get()
     }
     
