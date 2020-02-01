@@ -11,9 +11,7 @@ public class Injected<Service> {
     private let injector: Injector
     
     public var wrappedValue: Service {
-        get {
-            return injector.unsafeGet()
-        }
+        return injector.unsafeGet()
     }
     
     public init(injector: Injector) {

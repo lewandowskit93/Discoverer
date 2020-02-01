@@ -10,6 +10,6 @@ import Injector
 
 struct ServiceConfigurator {
     static func configure(injector: Injector) throws {
-        try Environment.injector.register(as: PFoo.self, singleton: Bar())
+        Environment.injector[PFoo.self] = Bar()
     }
 }

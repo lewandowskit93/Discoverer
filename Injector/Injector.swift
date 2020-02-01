@@ -16,6 +16,16 @@ public final class Injector {
         
     }
     
+    public subscript<T>(type: T.Type) -> T {
+        get {
+            return unsafeGet()
+        }
+        set (newValue) {
+            //swiftlint:disable force_try
+            try! register(as: T.self, singleton: newValue)
+        }
+    }
+    
     public func unsafeGet<T>() -> T {
         //swiftlint:disable force_try
         return try! get()
