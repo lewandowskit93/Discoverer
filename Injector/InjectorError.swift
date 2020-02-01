@@ -9,4 +9,5 @@
 public enum InjectorError: Error {
     case notRegistered
     case alreadyRegistered
+    case invalidType
 }

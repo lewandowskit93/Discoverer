@@ -9,5 +9,5 @@
 import Injector
 
 struct Environment: PInjectorProvider {
-    static let injector: Injector = Injector()
+    static var injector: Injector = Injector()
 }

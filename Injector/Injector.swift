@@ -7,73 +7,64 @@
 //
 
 public final class Injector {
-    public typealias Factory = () -> Any
-    private var singletons: [ObjectIdentifier: Any] = [:]
-    private var lazySingletons: [ObjectIdentifier: Factory] = [:]
-    private var factories: [ObjectIdentifier: Factory] = [:]
+    private var injectables: [ObjectIdentifier: AnyInjectable] = [:]
+    public var allowRewrite: Bool
     
-    public init() {
-        
+    public init(allowRewrite: Bool = false) {
+        self.allowRewrite = allowRewrite
     }
     
-    public subscript<T>(type: T.Type) -> T {
-        get {
-            return unsafeGet()
-        }
-        set (newValue) {
-            //swiftlint:disable force_try
-            try! register(as: T.self, singleton: newValue)
-        }
+    public subscript<T>(type: T.Type) -> T? {
+        return try? get(as: T.self)
     }
     
-    public func unsafeGet<T>() -> T {
+    public func unsafeGet<T>(as type: T.Type) -> T {
         //swiftlint:disable force_try
-        return try! get()
+        return try! get(as: T.self)
     }
-    
-    public func get<T>() throws -> T {
-        if let singleton = singletons[ObjectIdentifier(T.self)] as? T {
-            return singleton
+        
+    public func get<T>(as type: T.Type) throws -> T {
+        if let injectable = injectables[ObjectIdentifier(T.self)] {
+            guard let instance: T = try? injectable.instance(as: T.self) else {
+                throw InjectorError.invalidType
+            }
+            if case .lazySingleton(_, let factory) = injectable {
+                injectables[ObjectIdentifier(T.self)] = .lazySingleton(instance, factory)
+            }
+            return instance
         } else {
             throw InjectorError.notRegistered
         }
     }
     
-    @discardableResult public func register<T>(as type: T.Type, singleton: T) throws -> Injector {
-        guard !isRegistered(type: type) else {
-            throw InjectorError.alreadyRegistered
-        }
-        singletons[ObjectIdentifier(T.self)] = singleton
-        return self
-    }
-        
-    @discardableResult public func register<T>(as type: T.Type, lazySingleton: @escaping () -> T) throws -> Injector {
-        guard !isRegistered(type: type) else {
-            throw InjectorError.alreadyRegistered
-        }
-        lazySingletons[ObjectIdentifier(T.self)] = lazySingleton
+    public func unsafeRegister<T>(as type: T.Type, injectable: Injectable<T>) -> Injector {
+        //swiftlint:disable force_try
+        try! register(as: T.self, injectable: injectable)
         return self
     }
     
-    @discardableResult public func register<T>(as type: T.Type, factory: @escaping () -> T) throws -> Injector {
-        guard !isRegistered(type: type) else {
-            throw InjectorError.alreadyRegistered
-        }
-        factories[ObjectIdentifier(T.self)] = factory
+    @discardableResult public func register<T>(as type: T.Type, injectable: Injectable<T>) throws -> Injector {
+        try register(as: T.self, injectable: injectable.any())
         return self
     }
     
-    public func unregister<T>(type: T.Type) throws -> Injector {
+    @discardableResult public func unregister<T>(type: T.Type) throws -> Injector {
         guard isRegistered(type: type) else {
             throw InjectorError.notRegistered
         }
-        singletons.removeValue(forKey: ObjectIdentifier(T.self))
+        injectables.removeValue(forKey: ObjectIdentifier(T.self))
         return self
     }
-    
+        
     public func isRegistered<T>(type: T.Type) -> Bool {
-        return singletons.keys.contains(ObjectIdentifier(T.self))
-            || lazySingletons.keys.contains(ObjectIdentifier(T.self))
-            || factories.keys.contains(ObjectIdentifier(T.self))
+        return injectables.keys.contains(ObjectIdentifier(T.self))
+    }
+    
+    @discardableResult private func register<T>(as type: T.Type, injectable: AnyInjectable) throws -> Injector {
+        guard !isRegistered(type: type) || allowRewrite else {
+            throw InjectorError.alreadyRegistered
+        }
+        injectables[ObjectIdentifier(T.self)] = injectable
+        return self
     }
 }
