@@ -11,7 +11,11 @@ public final class Injector {
     private var singletons: [ObjectIdentifier: Any] = [:]
     private var lazySingletons: [ObjectIdentifier: Factory] = [:]
     private var factories: [ObjectIdentifier: Factory] = [:]
-        
+    
+    public func unsafeGet<T>() -> T {
+        return try! get()
+    }
+    
     public func get<T>() throws -> T {
         if let singleton = singletons[ObjectIdentifier(T.self)] as? T {
             return singleton
