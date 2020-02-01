@@ -53,6 +53,7 @@ public final class Injector {
             throw InjectorError.notRegistered
         }
         singletons.removeValue(forKey: ObjectIdentifier(T.self))
+        return self
     }
     
     public func isRegistered<T>(type: T.Type) -> Bool {
