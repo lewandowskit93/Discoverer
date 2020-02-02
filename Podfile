@@ -36,7 +36,7 @@ target 'Discoverer_iOS' do
 end
 
 target 'Discoverer_tvOS' do
-  platform :tvos, '10.10'
+  platform :tvos, '9.0'
   pod 'SwiftLint'
 
   # Pods for Discoverer
@@ -49,7 +49,7 @@ target 'Discoverer_tvOS' do
 end
 
 target 'Discoverer_watchOS' do
-  platform :tvos, '10.10'
+  platform :watchos, '2.0'
   pod 'SwiftLint'
 
   # Pods for Discoverer
