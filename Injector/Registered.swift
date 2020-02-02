@@ -9,15 +9,18 @@
 @propertyWrapper
 public class Registered<Service> {
     private let injector: Injector
+    private let injected: Injection<Service>
     
-    public var wrappedValue: AnyInjection {
-        //swiftlint:disable force_try
-        return try! injector.getInjection(Service.self)
+    public var wrappedValue: Injection<Service> {
+        get {
+            return injected
+        }
     }
     
-    public init(wrappedValue: AnyInjection, asType type: Service.Type, inInjector injector: Injector) {
+    public init(wrappedValue: Injection<Service>, inInjector injector: Injector) {
         self.injector = injector
+        self.injected = wrappedValue
+        //swiftlint:disable force_try
         try! injector.register(as: Service.self, injection: wrappedValue)
     }
 }
-

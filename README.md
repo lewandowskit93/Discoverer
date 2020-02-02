@@ -92,7 +92,7 @@ Example usage:
 **Registered** is a property wrapped that marks an injectable as registered with given Injector.
 Example usage:
 ```swift
-@Registered(asType: PServiceA.self, inInjector: Environment.services)
+@Registered(inInjector: Environment.services)
 var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
 ```
 

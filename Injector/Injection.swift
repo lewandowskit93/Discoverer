@@ -26,7 +26,7 @@ public enum Injection<T> {
     }
 }
 
-public extension Injection {
+internal extension Injection {
     func any() -> AnyInjection {
         switch self {
         case .singleton(let value):

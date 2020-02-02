@@ -14,8 +14,8 @@ final class RegisteredTests: XCTestCase {
         struct SUT {
             static let injector = Injector()
             static let instance = Foo()
-            @Registered(asType: Foo.self, inInjector: injector)
-            var foo = Injection<Foo>.factory({ instance }).any()
+            @Registered(inInjector: injector)
+            var foo = Injection<Foo>.factory({ instance })
         }
         let sut = SUT()
         try XCTAssertTrue(SUT.injector.get(Foo.self) === SUT.instance)
@@ -31,8 +31,8 @@ final class RegisteredTests: XCTestCase {
         struct SUT {
             static let injector = Injector()
             static let instance = Foo()
-            @Registered(asType: Foo.self, inInjector: injector)
-            var foo = Injection<Foo>.singleton(instance).any()
+            @Registered(inInjector: injector)
+            var foo = Injection<Foo>.singleton(instance)
         }
         let sut = SUT()
         try XCTAssertTrue(SUT.injector.get(Foo.self) === SUT.instance)
@@ -48,8 +48,8 @@ final class RegisteredTests: XCTestCase {
         struct SUT {
             static let injector = Injector()
             static let instance = Foo()
-            @Registered(asType: Foo.self, inInjector: injector)
-            var foo = Injection<Foo>.lazySingleton(nil, {instance}).any()
+            @Registered(inInjector: injector)
+            var foo = Injection<Foo>.lazySingleton(nil, {instance})
         }
         let sut = SUT()
         try XCTAssertTrue(SUT.injector.get(Foo.self) === SUT.instance)
@@ -59,23 +59,5 @@ final class RegisteredTests: XCTestCase {
         default:
             XCTFail()
         }
-    }
-    
-    func testRegisteredIncorrectly_WhenInstanceAccessed_ShouldThrowError() {
-        struct SUT {
-            static let injector = Injector()
-            static let instance = Foo()
-            @Registered(asType: Bar.self, inInjector: injector)
-            var foo = Injection<Foo>.factory({ instance }).any()
-        }
-        _ = SUT()
-        do {
-            try _ = SUT.injector.get(Bar.self)
-            XCTFail("expected to throw error")
-        } catch InjectorError.invalidType {
-            // nothing to do
-        } catch {
-            XCTFail("invalid error thrown")
-        }
-    }
+    }    
 }

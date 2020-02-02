@@ -6,7 +6,7 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-public enum AnyInjection {
+internal enum AnyInjection {
     public typealias Factory = () -> Any
     case singleton(_ value: Any)
     case lazySingleton(_ value: Any?, _ factory: Factory)

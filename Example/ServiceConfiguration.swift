@@ -9,9 +9,9 @@
 import Injector
 
 struct ServiceConfiguration {
-    @Registered(asType: PServiceA.self, inInjector: Environment.services)
-    var serviceAInjection = Injection<PServiceA>.singleton(ServiceA()).any()
+    @Registered(inInjector: Environment.services)
+    var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
     
-    @Registered(asType: PServiceB.self, inInjector: Environment.services)
-    var serviceBInjection = Injection<PServiceB>.factory({ ServiceB() }).any()
+    @Registered(inInjector: Environment.services)
+    var serviceBInjection = Injection<PServiceB>.factory({ ServiceB() })
 }

@@ -43,15 +43,8 @@ public final class Injector {
     public func isRegistered<T>(type: T.Type) -> Bool {
         return injections.keys.contains(ObjectIdentifier(T.self))
     }
-    
-    internal func getInjection<T>(_ type: T.Type = T.self) throws -> AnyInjection {
-        guard let anyInjection = injections[ObjectIdentifier(T.self)] else {
-            throw InjectorError.notRegistered
-        }
-        return anyInjection
-    }
-    
-    @discardableResult internal func register<T>(as type: T.Type, injection: AnyInjection) throws -> Injector {
+        
+    @discardableResult private func register<T>(as type: T.Type, injection: AnyInjection) throws -> Injector {
         guard !isRegistered(type: type) || allowRewrite else {
             throw InjectorError.alreadyRegistered
         }
