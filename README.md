@@ -151,14 +151,14 @@ struct Configurator {
 or:
 ```swift
 struct Configurator {
+    @Registered(inInjector: Environment.repositories)
+    var serviceBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
+
     @Registered(inInjector: Environment.services)
     var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
-    
-    @Registered(inInjector: Environment.services)
-    var serviceBInjection = Injection<PServiceB>.factory({ ServiceB() })
 }
 ```
-*The second approach requires creating an instance of Configurator, so that injections are registered*
+*The second approach requires creating an instance of Configurator, so that injections are registered.*
 
 Then inject dependencies into ViewModel:
 ```swift
