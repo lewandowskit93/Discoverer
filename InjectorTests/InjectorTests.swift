@@ -21,13 +21,13 @@ final class InjectorTests: XCTestCase {
     func testGet_WhenRegisteredWithConcreteTypeSingleton_ShouldReturnInstance() throws {
         let foo = Foo()
         try sut.register(as: Foo.self, injectable: .singleton(foo))
-        let _: Foo = try sut.get(as: Foo.self)
+        let _: Foo = try sut.get(Foo.self)
     }
     
     func testGet_WhenRegisteredWithProtocolSingleton_ShouldReturnInstance() throws {
         let foo = Foo()
         try sut.register(as: PFoo.self, injectable: .singleton(foo))
-        let _: PFoo = try sut.get(as: PFoo.self)
+        let _: PFoo = try sut.get(PFoo.self)
     }
     
     func testGet_WhenRegisteredWithLazySingleton_ShouldAlwaysReturnSameInstance() throws {
@@ -53,7 +53,7 @@ final class InjectorTests: XCTestCase {
     
     func testGet_WhenTypeNotRegistered_ShouldThrowError() {
         do {
-            let _: PFoo = try sut.get(as: PFoo.self)
+            let _: PFoo = try sut.get(PFoo.self)
             XCTFail("Expected to throw error")
         } catch InjectorError.notRegistered {
             // nothing to do
@@ -92,7 +92,7 @@ final class InjectorTests: XCTestCase {
     func testUnregister_WhenRegistered_ShouldUnregisterService() throws {
         try sut.register(as: PFoo.self, injectable: .singleton(Foo())).unregister(type: PFoo.self)
         do {
-            let _: PFoo = try sut.get(as: PFoo.self)
+            let _: PFoo = try sut.get(PFoo.self)
             XCTFail("Expected to throw error")
         } catch InjectorError.notRegistered {
             // nothing to do

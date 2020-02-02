@@ -12,7 +12,7 @@ public class Injected<Service> {
     
     public var wrappedValue: Service {
         //swiftlint:disable force_try
-        return try! injector.get(as: Service.self)
+        return try! injector.get(Service.self)
     }
     
     public init(injector: Injector) {

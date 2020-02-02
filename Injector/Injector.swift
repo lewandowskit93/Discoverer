@@ -15,10 +15,10 @@ public final class Injector {
     }
     
     public subscript<T>(type: T.Type) -> T? {
-        return try? get(as: T.self)
+        return try? get(T.self)
     }
             
-    public func get<T>(as type: T.Type = T.self) throws -> T {
+    public func get<T>(_ type: T.Type = T.self) throws -> T {
         guard var injectable = injectables[ObjectIdentifier(T.self)] else {
             throw InjectorError.notRegistered
         }
