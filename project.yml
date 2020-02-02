@@ -1,0 +1,126 @@
+name: Injector
+attributes:
+  ORGANIZATIONNAME: LionSoftware.org
+options:
+  createIntermediateGroups: true
+  xcodeVersion: 11.3
+  groupSortPosition: top
+  deploymentTarget:
+    iOS: "8.0"
+    macOS: "10.10"
+    watchOS: "2.0"
+    tvOS: "9.0"
+configs:
+  Debug: debug
+  Release: release
+fileGroups:
+  - Configurations
+  - Package.swift
+configFiles:
+  Debug: Configurations/Debug.xcconfig
+  Release: Configurations/Release.xcconfig
+schemes:
+  Injector_iOS:
+    build:
+      targets:
+        Injector_iOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets: [InjectorTests_iOS]
+      gatherCoverageData: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+  Injector_macOS:
+    build:
+      targets:
+        Injector_macOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets: [InjectorTests_macOS]
+      gatherCoverageData: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+  Injector_watchOS:
+    build:
+      targets:
+        Injector_watchOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets: []
+      gatherCoverageData: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+  Injector_tvOS:
+    build:
+      targets:
+        Injector_tvOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets: [InjectorTests_tvOS]
+      gatherCoverageData: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
+targets:
+  Injector:
+    type: framework
+    platform: [macOS, iOS, tvOS, watchOS]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(INJECTOR_BUNDLE_IDENTIFIER)
+        PROVISIONING_PROFILE_SPECIFIER: $(INJECTOR_PROVISIONING_PROFILE_SPECIFIER)
+    sources:
+      - path: Injector
+  InjectorTests:
+    type: bundle.unit-test
+    platform: [macOS, iOS, tvOS]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.injector.tests
+        # empty specifier resolves to "Automatic"
+        PROVISIONING_PROFILE_SPECIFIER: 
+    sources:
+      - path: InjectorTests
+    dependencies:
+      - target: Injector_macOS
+  Example:
+    type: application
+    platform: macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.injector.example
+        # empty specifier resolves to "Automatic"
+        PROVISIONING_PROFILE_SPECIFIER:
+        CURRENT_PROJECT_VERSION: 1
+    sources:
+      - path: Example
+    dependencies:
+      - target: Injector_macOS
+    postBuildScripts:
+      - script: |
+                "${PODS_ROOT}/SwiftLint/swiftlint"
+        name: SwiftLint
