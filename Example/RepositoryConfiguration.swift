@@ -1,5 +1,5 @@
 //
-//  RepositoriesConfigurator.swift
+//  RepositoryConfiguration.swift
 //  Example
 //
 //  Created by Tomasz Lewandowski on 01/02/2020.
@@ -8,7 +8,7 @@
 
 import Injector
 
-struct RepositoriesConfigurator {
+struct RepositoryConfiguration {
     static func configure(injector: Injector) throws {
         _ = try? Environment.repositories
             .register(as: PRepositoryA.self, injection: .lazySingleton(nil, { RepositoryA() }))

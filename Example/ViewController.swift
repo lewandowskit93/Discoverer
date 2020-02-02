@@ -9,20 +9,16 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    var appConfiguration: AppConfiguration = AppConfiguration()
+
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        //swiftlint:disable force_try
-        try! ServiceConfigurator.configure(injector: Environment.services)
-        try! RepositoriesConfigurator.configure(injector: Environment.repositories)
-
+        appConfiguration.configure()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        //swiftlint:disable force_try
-        try! ServiceConfigurator.configure(injector: Environment.services)
-        try! RepositoriesConfigurator.configure(injector: Environment.repositories)
-
+        appConfiguration.configure()
     }
     
     override func viewDidLoad() {
