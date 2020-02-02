@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.2"
   spec.summary      = "Discoverer a lightweight, multiplatform dependenct injection tool written in pure Swift."
   spec.description = <<-DESC
-  Discoverer a lightweight, multiplatform dependenct injection tool written in pure Swift that implements Service Locator pattern.
+  Discoverer is a lightweight, multiplatform dependenct injection tool written in pure Swift that implements Service Locator pattern.
   DESC
   spec.homepage     = "https://github.com/lewandowskit93/Discoverer"
   spec.license      = { :type => "MIT", :file => "LICENSE.md" }

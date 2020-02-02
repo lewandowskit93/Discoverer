@@ -15,3 +15,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add Registered property wrapper
 - Add following injection modes: singleton, lazySingleton, factory
 - Add ability to register and discover services
+- Change pod name to Discoverer
