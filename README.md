@@ -79,15 +79,30 @@ Here is a quick overview of functionalities and concepts used in **Discoverer**.
 ### Injection
 
 **Injection** is an enum which represents single Injection. It can be one of:
-- **Singleton** - returns same instance everytime e.g.: ```swift Injectable<PFoo>.singleton(Foo()) ```
-- **LazySingleton** - if there is no instance it uses factory to create one, then it returns this instance everytime e.g.: ```swift Injectable<PFoo>.lazySingleton(nil, { Foo() }) ```
-- **Factory** - returns new instance everytime e.g.: ```swift Injectable<PFoo>.factory({ Foo() }) ```
+- **Singleton** - returns same instance everytime e.g.: 
+```swift
+Injectable<PFoo>.singleton(Foo())
+```
+- **LazySingleton** - if there is no instance it uses factory to create one, then it returns this instance everytime e.g.: 
+```swift
+Injectable<PFoo>.lazySingleton(nil, { Foo() })
+```
+- **Factory** - returns new instance everytime e.g.: 
+```swift
+Injectable<PFoo>.factory({ Foo() })
+```
 
 ### Injector
 
 **Injector** manages injected services. It grants access to the service by providing:
-- subscript - returning service as optional (nil if not registered) e.g.: ```swift injector[PFoo.self]```
-- getter - returning service and throwing error if not registered e.g.: ```swift injector.get(PFoo.self)```
+- subscript - returning service as optional (nil if not registered) e.g.:
+```swift
+injector[PFoo.self]
+```
+- getter - returning service and throwing error if not registered e.g.: 
+```swift
+injector.get(PFoo.self)
+```
 
 ### Injected
 **Injected** is a property wrapper that marks a property as injected with the service provided by given Injector.
@@ -152,7 +167,7 @@ or:
 ```swift
 struct Configurator {
     @Registered(inInjector: Environment.repositories)
-    var serviceBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
+    var repositoryBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
 
     @Registered(inInjector: Environment.services)
     var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
