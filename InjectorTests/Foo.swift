@@ -6,7 +6,7 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-struct Foo: PFoo {
+class Foo: PFoo {
     func foo() {
         print("Foo")
     }

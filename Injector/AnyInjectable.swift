@@ -6,13 +6,13 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-public enum AnyInjectable {
+internal enum AnyInjectable {
     public typealias Factory = () -> Any
     case singleton(_ value: Any)
     case lazySingleton(_ value: Any?, _ factory: Factory)
     case factory(_ factory: Factory)
     
-    internal func instance<T>(as: T.Type) throws -> T {
+    internal mutating func instance<T>(as: T.Type) throws -> T {
         switch self {
         case .singleton(let value):
             guard let singleton = value as? T else { throw InjectorError.invalidType }
@@ -26,6 +26,7 @@ public enum AnyInjectable {
                 return instance
             } else {
                 guard let instance = factory() as? T else { throw InjectorError.invalidType }
+                self = .lazySingleton(instance, factory)
                 return instance
             }
         }

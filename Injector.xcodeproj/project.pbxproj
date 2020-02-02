@@ -66,6 +66,12 @@
 		F149CDAE23E5B0CC009B2B7F /* RepositoryA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDAD23E5B0CC009B2B7F /* RepositoryA.swift */; };
 		F149CDB023E5B139009B2B7F /* RepositoryB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDAF23E5B139009B2B7F /* RepositoryB.swift */; };
 		F149CDB223E5C0E3009B2B7F /* RepositoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDB123E5C0E3009B2B7F /* RepositoriesConfigurator.swift */; };
+		F149CDBF23E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
+		F149CDC023E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
+		F149CDC123E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
+		F149CDC323E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
+		F149CDC423E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
+		F149CDC523E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
 		F20286495049CE235A59BF9F /* AnyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjectable.swift */; };
 		F545568E1F8F470A66B9BCA6 /* Pods_InjectorTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE51104DA00A71AD6439C5 /* Pods_InjectorTests_macOS.framework */; };
 		F77733BAAC487EAE6692557E /* Injector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A570CDBE0213B3C30A6462 /* Injector.framework */; };
@@ -210,6 +216,8 @@
 		F149CDAD23E5B0CC009B2B7F /* RepositoryA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryA.swift; sourceTree = "<group>"; };
 		F149CDAF23E5B139009B2B7F /* RepositoryB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryB.swift; sourceTree = "<group>"; };
 		F149CDB123E5C0E3009B2B7F /* RepositoriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesConfigurator.swift; sourceTree = "<group>"; };
+		F149CDBE23E70A76009B2B7F /* InjectableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableTests.swift; sourceTree = "<group>"; };
+		F149CDC223E71127009B2B7F /* InjectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedTests.swift; sourceTree = "<group>"; };
 		FB3D3180830A6954D35F66B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FBCEF291511E1912D69E4C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +376,8 @@
 				16480CF1FB427960BF733BA0 /* InjectorTests_tvOS-Bridging-Header.h */,
 				43CD0447A535A7B67CB53DC3 /* InjectorTests.swift */,
 				598B94B59B5DD95CCD138258 /* PFoo.swift */,
+				F149CDBE23E70A76009B2B7F /* InjectableTests.swift */,
+				F149CDC223E71127009B2B7F /* InjectedTests.swift */,
 			);
 			path = InjectorTests;
 			sourceTree = "<group>";
@@ -859,8 +869,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F149CDC023E70A76009B2B7F /* InjectableTests.swift in Sources */,
 				9F7058C3280524A8B08ACC1D /* Bar.swift in Sources */,
 				EBA62B1F2BF39B0784A59819 /* Foo.swift in Sources */,
+				F149CDC423E71127009B2B7F /* InjectedTests.swift in Sources */,
 				96642EAEFC978D7584967A6D /* InjectorTests.swift in Sources */,
 				62F63CDEBE6DCF22914D04EE /* PFoo.swift in Sources */,
 			);
@@ -882,8 +894,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F149CDBF23E70A76009B2B7F /* InjectableTests.swift in Sources */,
 				C23FF1FF0647A37815644C6B /* Bar.swift in Sources */,
 				5CBE4819B9241D24B7816A6F /* Foo.swift in Sources */,
+				F149CDC323E71127009B2B7F /* InjectedTests.swift in Sources */,
 				5D2BA06971445A4DB49F1156 /* InjectorTests.swift in Sources */,
 				F11DD1FE32BA814A762D0970 /* PFoo.swift in Sources */,
 			);
@@ -917,8 +931,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F149CDC123E70A76009B2B7F /* InjectableTests.swift in Sources */,
 				F09AA83B026CC07775839D04 /* Bar.swift in Sources */,
 				28B28D49D6B3F2E4D2654680 /* Foo.swift in Sources */,
+				F149CDC523E71127009B2B7F /* InjectedTests.swift in Sources */,
 				51D577F8B48A9160D0938C6A /* InjectorTests.swift in Sources */,
 				62CB62F576A4A080096A41AE /* PFoo.swift in Sources */,
 			);

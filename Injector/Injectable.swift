@@ -12,14 +12,16 @@ public enum Injectable<T> {
     case lazySingleton( _ value: T?, _ factory: Factory)
     case factory(_ factory: Factory)
         
-    public func instance() -> T {
+    mutating public func instance() -> T {
         switch self {
         case .singleton(let value):
             return value
         case .factory(let factory):
             return factory()
         case .lazySingleton(let instance, let factory):
-            return instance ?? factory()
+            let newInstance = instance ?? factory()
+            self = .lazySingleton(newInstance, factory)
+            return newInstance
         }
     }
 }

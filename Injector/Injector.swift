@@ -17,32 +17,19 @@ public final class Injector {
     public subscript<T>(type: T.Type) -> T? {
         return try? get(as: T.self)
     }
-    
-    public func unsafeGet<T>(as type: T.Type) -> T {
-        //swiftlint:disable force_try
-        return try! get(as: T.self)
-    }
-        
-    public func get<T>(as type: T.Type) throws -> T {
-        if let injectable = injectables[ObjectIdentifier(T.self)] {
+            
+    public func get<T>(as type: T.Type = T.self) throws -> T {
+        if var injectable = injectables[ObjectIdentifier(T.self)] {
             guard let instance: T = try? injectable.instance(as: T.self) else {
                 throw InjectorError.invalidType
             }
-            if case .lazySingleton(_, let factory) = injectable {
-                injectables[ObjectIdentifier(T.self)] = .lazySingleton(instance, factory)
-            }
+            injectables[ObjectIdentifier(T.self)] = injectable
             return instance
         } else {
             throw InjectorError.notRegistered
         }
     }
-    
-    public func unsafeRegister<T>(as type: T.Type, injectable: Injectable<T>) -> Injector {
-        //swiftlint:disable force_try
-        try! register(as: T.self, injectable: injectable)
-        return self
-    }
-    
+        
     @discardableResult public func register<T>(as type: T.Type, injectable: Injectable<T>) throws -> Injector {
         try register(as: T.self, injectable: injectable.any())
         return self
