@@ -19,15 +19,12 @@ public final class Injector {
     }
             
     public func get<T>(as type: T.Type = T.self) throws -> T {
-        if var injectable = injectables[ObjectIdentifier(T.self)] {
-            guard let instance: T = try? injectable.instance(as: T.self) else {
-                throw InjectorError.invalidType
-            }
-            injectables[ObjectIdentifier(T.self)] = injectable
-            return instance
-        } else {
+        guard var injectable = injectables[ObjectIdentifier(T.self)] else {
             throw InjectorError.notRegistered
         }
+        let instance: T = try injectable.instance(as: T.self)
+        injectables[ObjectIdentifier(T.self)] = injectable
+        return instance
     }
         
     @discardableResult public func register<T>(as type: T.Type, injectable: Injectable<T>) throws -> Injector {
