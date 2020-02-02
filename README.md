@@ -1,4 +1,4 @@
-Injector is a lightweight, multiplatform dependency injection utility written in pure Swift.
+Discoverer is a lightweight, multiplatform dependency injection utility written in pure Swift.
 
 ## Requirements
 
@@ -10,37 +10,37 @@ Project uses following tools for development
 
 ## Installation
 
-To get started with the **Injector** you first have to decide how you will integrate it with your project. Injector supports following tools:
+To get started with the **Discoverer** you first have to decide how you will integrate it with your project. Discoverer supports following tools:
 
 ### Cocoapods
 
-To install Injector using Cocoapods go through following steps:
+To install Discoverer using Cocoapods go through following steps:
 
 1. Add the following entry in your **Podfile**:
 ```
-pod 'Injector'
+pod 'Discoverer'
 ```
 2. Then run `pod install`.
 
 
 ### Carthage
 
-To install Injector using Carthage go through following steps:
+To install Discoverer using Carthage go through following steps:
 
 1. Add the following entry to your **Cartfile**
 
 ```
-github "lewandowskit93/Injector"
+github "lewandowskit93/Discoverer"
 ```
 
 2. Then run ```carthage update```
 
 ### Swift Package Manager
 
-To install Injector using **Swift Package Manager** go through following steps:
+To install Discoverer using **Swift Package Manager** go through following steps:
 
-1. Add following package dependency in you **Package.swift** ``` .package(url: "https://github.com/lewandowskit93/Injector.git", from: "0.0.1") ```
-2. Add following target dependency in your **Package.swift** ``` dependencies: ["Injector"]) ```
+1. Add following package dependency in you **Package.swift** ``` .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.1") ```
+2. Add following target dependency in your **Package.swift** ``` dependencies: ["Discoverer"]) ```
 
 For instance this is how it might look like:
 ```swift
@@ -54,19 +54,19 @@ let package = Package(
             targets: ["YourLibrary"])
     ],
     dependencies: [
-        .package(url: "https://github.com/lewandowskit93/Injector.git", from: "0.0.1")
+        .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.1")
     ],
     targets: [
         .target(
             name: "YourLibrary",
-            dependencies: ["Injector"])
+            dependencies: ["Discoverer"])
     ]
 )
 ```
 
 ## Overview
 
-Here is a quick overview of functionalities and concepts used in **Injector**.
+Here is a quick overview of functionalities and concepts used in **Discoverer**.
 
 ### Injection
 
@@ -77,7 +77,7 @@ Here is a quick overview of functionalities and concepts used in **Injector**.
 
 ### Injector
 
-**Injector** is a manages injected services. It grants access to the service by providing:
+**Injector** manages injected services. It grants access to the service by providing:
 - subscript - returning service as optional (nil if not registered) e.g.: ```swift injector[PFoo.self]```
 - getter - returning service and throwing error if not registered e.g.: ```swift injector.get(PFoo.self)```
 
@@ -89,7 +89,7 @@ Example usage:
 ```
 
 ### Registered
-**Registered** is a property wrapped that marks an injectable as registered with given Injector.
+**Registered** is a property wrapper that marks an injection as registered in given Injector.
 Example usage:
 ```swift
 @Registered(inInjector: Environment.services)
@@ -129,7 +129,7 @@ class RepositoryB: PRepositoryB {
 }
 ```
 
-Then configure the injector as follows
+Then configure the injector as follows:
 ```
 struct Configurator {
     static func configure(injector: Injector) throws {
@@ -140,8 +140,19 @@ struct Configurator {
     }
 }
 ```
+or:
+```swift
+struct Configurator {
+    @Registered(inInjector: Environment.services)
+    var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
+    
+    @Registered(inInjector: Environment.services)
+    var serviceBInjection = Injection<PServiceB>.factory({ ServiceB() })
+}
+```
+*The second approach requires creating an instance of Configurator, so that injections are registered*
 
-And inject dependencies into ViewModel:
+Then inject dependencies into ViewModel:
 ```swift
 struct FooViewModel {
     @Injected(injector: Environment.services) var serviceA: PServiceA
@@ -159,4 +170,4 @@ If you created some new feature or fixed a bug you can create a pull request. Pl
 
 ## License
 
-Injector is released under an MIT license. See [License.md](LICENSE.md) for more information.
+Discoverer is released under an MIT license. See [License.md](LICENSE.md) for more information.
