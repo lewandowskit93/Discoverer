@@ -1,14 +1,14 @@
 Pod::Spec.new do |spec|
-  spec.name         = "Injector"
+  spec.name         = "Discoverer"
   spec.version      = "0.0.1"
-  spec.summary      = "Injector a lightweight, multiplatform dependenct injection tool written in pure Swift."
+  spec.summary      = "Discoverer a lightweight, multiplatform dependenct injection tool written in pure Swift."
   spec.description = <<-DESC
-  Injector a lightweight, multiplatform dependenct injection tool written in pure Swift that implements Service Locator pattern.
+  Discoverer is a lightweight, multiplatform dependenct injection tool written in pure Swift that implements Service Locator pattern.
   DESC
-  spec.homepage     = "https://github.com/lewandowskit93/Injector"
+  spec.homepage     = "https://github.com/lewandowskit93/Discoverer"
   spec.license      = { :type => "MIT", :file => "LICENSE.md" }
   spec.author       = { "Tomasz Lewandowski" => "tomasz.t.lewandowski@gmail.com" }
-  spec.source       = { :git => "https://github.com/lewandowskit93/Injector.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/lewandowskit93/Discoverer.git", :tag => "#{spec.version}" }
   spec.source_files  = "Injector/**/*.swift"
   spec.swift_versions = "5.1"
   spec.ios.deployment_target = '8.0'

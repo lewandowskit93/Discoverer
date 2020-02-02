@@ -9,10 +9,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "Injector",
+    name: "Discoverer",
     products: [
         .library(
-            name: "Injector",
+            name: "Discoverer",
             targets: ["Injector"])
     ],
     targets: [
