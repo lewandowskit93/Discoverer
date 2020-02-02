@@ -182,7 +182,7 @@
 		27D59A742F4C8AAFECF64AF6 /* ServiceA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceA.swift; sourceTree = "<group>"; };
 		290E6DB9D31BF24C1FA54F63 /* FooViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooViewModel.swift; sourceTree = "<group>"; };
 		2B7A515FF43CC1DF19F9DFAB /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
-		2BD34EEA54FB760E96A6945B /* DiscovererTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD34EEA54FB760E96A6945B /* DiscovererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D795BE0A7FE6C875937B7AF /* Registered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registered.swift; sourceTree = "<group>"; };
 		2E1AFC4E70435A6DB2BE7976 /* ServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfiguration.swift; sourceTree = "<group>"; };
 		2ED838C296AC92B9BB9C4210 /* Pods-DiscovererTests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscovererTests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-DiscovererTests_iOS/Pods-DiscovererTests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		A6698859BBE87BA67A428750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB1EF5B35E993F3497452ED9 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B56F92A3DEB5C8C305FDFBF4 /* Pods_Discoverer_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Discoverer_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFD780938A0DA52ECA80FA50 /* DiscovererTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFD780938A0DA52ECA80FA50 /* DiscovererTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscovererTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F07831837044351F625ECB /* DiscovererTests_macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiscovererTests_macOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		C48AA0F439112720090382A7 /* Pods-DiscovererTests_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscovererTests_tvOS.release.xcconfig"; path = "Target Support Files/Pods-DiscovererTests_tvOS/Pods-DiscovererTests_tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		C55A31564224398E712319C8 /* InjectorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectorError.swift; sourceTree = "<group>"; };
@@ -398,7 +398,6 @@
 				6CB20A27D957A5D795FEF2EE /* Pods-Example.debug.xcconfig */,
 				6E50BE7C1FE467C95CE0C282 /* Pods-Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -669,6 +668,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 3FD6980EB94F154955A06E73;
