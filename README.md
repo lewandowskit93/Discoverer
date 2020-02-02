@@ -1,3 +1,11 @@
+[![Build Status](https://travis-ci.org/lewandowskit93/Discoverer.svg?branch=master)](https://travis-ci.org/lewandowskit93/Discoverer)
+[![codecov](https://codecov.io/gh/lewandowskit93/Discoverer/branch/master/graph/badge.svg)](https://codecov.io/gh/lewandowskit93/Discoverer)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods](https://img.shields.io/cocoapods/v/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+[![Platform](https://img.shields.io/cocoapods/p/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+[![Platform](https://img.shields.io/badge/Platform-linux-brightgreen.svg)](#)
+[![License](https://img.shields.io/cocoapods/l/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+
 Discoverer is a lightweight, multiplatform dependency injection utility written in pure Swift.
 
 ## Requirements
@@ -77,9 +85,9 @@ Here is a quick overview of functionalities and concepts used in **Discoverer**.
 
 ### Injector
 
-**Injector** is a manages injected services. It grants access to the service by providing:
-- subscript - returning service as optional (nil if not registered) e.g.: ```swift discoverer[PFoo.self]```
-- getter - returning service and throwing error if not registered e.g.: ```swift discoverer.discover(PFoo.self)```
+**Injector** manages injected services. It grants access to the service by providing:
+- subscript - returning service as optional (nil if not registered) e.g.: ```swift injector[PFoo.self]```
+- getter - returning service and throwing error if not registered e.g.: ```swift injector.get(PFoo.self)```
 
 ### Injected
 **Injected** is a property wrapper that marks a property as injected with the service provided by given Injector.
@@ -89,7 +97,7 @@ Example usage:
 ```
 
 ### Registered
-**Registered** is a property wrapped that marks an injectable as registered with given Injector.
+**Registered** is a property wrapper that marks an injection as registered in given Injector.
 Example usage:
 ```swift
 @Registered(inInjector: Environment.services)
@@ -129,7 +137,7 @@ class RepositoryB: PRepositoryB {
 }
 ```
 
-Then configure the injector as follows
+Then configure the injector as follows:
 ```
 struct Configurator {
     static func configure(injector: Injector) throws {
@@ -140,8 +148,19 @@ struct Configurator {
     }
 }
 ```
+or:
+```swift
+struct Configurator {
+    @Registered(inInjector: Environment.repositories)
+    var serviceBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
 
-And inject dependencies into ViewModel:
+    @Registered(inInjector: Environment.services)
+    var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
+}
+```
+*The second approach requires creating an instance of Configurator, so that injections are registered.*
+
+Then inject dependencies into ViewModel:
 ```swift
 struct FooViewModel {
     @Injected(injector: Environment.services) var serviceA: PServiceA
@@ -159,4 +178,4 @@ If you created some new feature or fixed a bug you can create a pull request. Pl
 
 ## License
 
-Injector is released under an MIT license. See [License.md](LICENSE.md) for more information.
+Discoverer is released under an MIT license. See [License.md](LICENSE.md) for more information.

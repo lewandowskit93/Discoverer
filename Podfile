@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-project 'Injector.xcodeproj'
+project 'Discoverer.xcodeproj'
  
 use_frameworks!
 
@@ -9,41 +9,48 @@ target 'Example' do
   pod 'SwiftLint'
 end
 
-target 'Injector_macOS' do
+target 'Discoverer_macOS' do
   platform :macos, '10.10'
   pod 'SwiftLint'
 
-  # Pods for Injector
+  # Pods for Discoverer
 
-  target 'InjectorTests_macOS' do
+  target 'DiscovererTests_macOS' do
     # Pods for testing
   	inherit! :search_paths
   end
 
 end
 
-target 'Injector_iOS' do
+target 'Discoverer_iOS' do
   platform :ios, '8.0'
   pod 'SwiftLint'
 
-  # Pods for Injector
+  # Pods for Discoverer
 
-  target 'InjectorTests_iOS' do
+  target 'DiscovererTests_iOS' do
     # Pods for testing
     inherit! :search_paths
   end
 
 end
 
-target 'Injector_tvOS' do
-  platform :tvos, '10.10'
+target 'Discoverer_tvOS' do
+  platform :tvos, '9.0'
   pod 'SwiftLint'
 
-  # Pods for Injector
+  # Pods for Discoverer
 
-  target 'InjectorTests_tvOS' do
+  target 'DiscovererTests_tvOS' do
     # Pods for testing
     inherit! :search_paths
   end
 
+end
+
+target 'Discoverer_watchOS' do
+  platform :watchos, '2.0'
+  pod 'SwiftLint'
+
+  # Pods for Discoverer
 end

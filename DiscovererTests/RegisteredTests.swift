@@ -1,13 +1,13 @@
 //
 //  RegisteredTests.swift
-//  Injector
+//  Discoverer
 //
 //  Created by Tomasz Lewandowski on 02/02/2020.
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
 import XCTest
-@testable import Injector
+@testable import Discoverer
 
 final class RegisteredTests: XCTestCase {
     func testRegisteredAttribute_WhenPassedFactory_ShouldRegisterThatFactory() throws {

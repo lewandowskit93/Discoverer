@@ -1,6 +1,6 @@
 //
 //  Common.xcconfig
-//  Injector
+//  Discoverer
 //
 //  Created by Tomasz Lewandowski on 01/02/2020.
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
@@ -9,11 +9,11 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-INJECTOR_BUNDLE_IDENTIFIER = org.lionsoftware.injector
-INJECTOR_PROVISIONING_PROFILE_SPECIFIER =
+DISCOVERER_BUNDLE_IDENTIFIER = org.lionsoftware.discoverer
+DISCOVERER_PROVISIONING_PROFILE_SPECIFIER =
 
 VERSIONING_SYSTEM = apple-generic
-PRODUCT_VERSION = 0.0.1
+PRODUCT_VERSION = 0.0.2
 SWIFT_VERSION = 5.0
 CODE_SIGN_STYLE = Manual
 

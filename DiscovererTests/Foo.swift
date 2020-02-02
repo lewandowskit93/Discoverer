@@ -1,13 +1,13 @@
 //
-//  Bar.swift
-//  Injector
+//  Foo.swift
+//  Discoverer
 //
 //  Created by Tomasz Lewandowski on 01/02/2020.
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-struct Bar: PFoo {
+class Foo: PFoo {
     func foo() {
-        print("Bar")
+        print("Foo")
     }
 }

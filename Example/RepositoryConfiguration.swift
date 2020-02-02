@@ -6,7 +6,7 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-import Injector
+import Discoverer
 
 struct RepositoryConfiguration {
     static func configure(injector: Injector) throws {

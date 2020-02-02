@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 0.0.2
+- Renamed library Injector -> Discoverer
+- Configured CI & badges
+
 ## 0.0.1
 - Add Injected property wrapper
 - Add Registered property wrapper

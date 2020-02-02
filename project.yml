@@ -1,4 +1,4 @@
-name: Injector
+name: Discoverer
 attributes:
   ORGANIZATIONNAME: LionSoftware.org
 options:
@@ -20,15 +20,15 @@ configFiles:
   Debug: Configurations/Debug.xcconfig
   Release: Configurations/Release.xcconfig
 schemes:
-  Injector_iOS:
+  Discoverer_iOS:
     build:
       targets:
-        Injector_iOS: all
+        Discoverer_iOS: all
     run:
       config: Debug
     test:
       config: Debug
-      targets: [InjectorTests_iOS]
+      targets: [DiscovererTests_iOS]
       gatherCoverageData: true
     profile:
       config: Release
@@ -36,15 +36,15 @@ schemes:
       config: Debug
     archive:
       config: Release
-  Injector_macOS:
+  Discoverer_macOS:
     build:
       targets:
-        Injector_macOS: all
+        Discoverer_macOS: all
     run:
       config: Debug
     test:
       config: Debug
-      targets: [InjectorTests_macOS]
+      targets: [DiscovererTests_macOS]
       gatherCoverageData: true
     profile:
       config: Release
@@ -52,10 +52,10 @@ schemes:
       config: Debug
     archive:
       config: Release
-  Injector_watchOS:
+  Discoverer_watchOS:
     build:
       targets:
-        Injector_watchOS: all
+        Discoverer_watchOS: all
     run:
       config: Debug
     test:
@@ -68,15 +68,15 @@ schemes:
       config: Debug
     archive:
       config: Release
-  Injector_tvOS:
+  Discoverer_tvOS:
     build:
       targets:
-        Injector_tvOS: all
+        Discoverer_tvOS: all
     run:
       config: Debug
     test:
       config: Debug
-      targets: [InjectorTests_tvOS]
+      targets: [DiscovererTests_tvOS]
       gatherCoverageData: true
     profile:
       config: Release
@@ -86,40 +86,40 @@ schemes:
       config: Release
 
 targets:
-  Injector:
+  Discoverer:
     type: framework
     platform: [macOS, iOS, tvOS, watchOS]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: $(INJECTOR_BUNDLE_IDENTIFIER)
-        PROVISIONING_PROFILE_SPECIFIER: $(INJECTOR_PROVISIONING_PROFILE_SPECIFIER)
+        PRODUCT_BUNDLE_IDENTIFIER: $(DISCOVERER_BUNDLE_IDENTIFIER)
+        PROVISIONING_PROFILE_SPECIFIER: $(DISCOVERER_PROVISIONING_PROFILE_SPECIFIER)
     sources:
-      - path: Injector
-  InjectorTests:
+      - path: Discoverer
+  DiscovererTests:
     type: bundle.unit-test
     platform: [macOS, iOS, tvOS]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.injector.tests
+        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.discoverer.tests
         # empty specifier resolves to "Automatic"
         PROVISIONING_PROFILE_SPECIFIER: 
     sources:
-      - path: InjectorTests
+      - path: DiscovererTests
     dependencies:
-      - target: Injector_macOS
+      - target: Discoverer_macOS
   Example:
     type: application
     platform: macOS
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.injector.example
+        PRODUCT_BUNDLE_IDENTIFIER: org.lionsoftware.discoverer.example
         # empty specifier resolves to "Automatic"
         PROVISIONING_PROFILE_SPECIFIER:
         CURRENT_PROJECT_VERSION: 1
     sources:
       - path: Example
     dependencies:
-      - target: Injector_macOS
+      - target: Discoverer_macOS
     postBuildScripts:
       - script: |
                 "${PODS_ROOT}/SwiftLint/swiftlint"

@@ -6,7 +6,7 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-import Injector
+import Discoverer
 
 struct FooViewModel {
     @Injected(injector: Environment.services) var serviceA: PServiceA
