@@ -1,3 +1,11 @@
+[![Build Status](https://travis-ci.org/lewandowskit93/Discoverer.svg?branch=master)](https://travis-ci.org/lewandowskit93/Discoverer)
+[![codecov](https://codecov.io/gh/lewandowskit93/Discoverer/branch/master/graph/badge.svg)](https://codecov.io/gh/lewandowskit93/Discoverer)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods](https://img.shields.io/cocoapods/v/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+[![Platform](https://img.shields.io/cocoapods/p/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+[![Platform](https://img.shields.io/badge/Platform-linux-brightgreen.svg)](#)
+[![License](https://img.shields.io/cocoapods/l/Discoverer.svg?style=flat)](https://cocoapods.org/pods/Discoverer)
+
 Discoverer is a lightweight, multiplatform dependency injection utility written in pure Swift.
 
 ## Requirements
