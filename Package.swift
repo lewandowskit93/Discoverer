@@ -13,16 +13,16 @@ let package = Package(
     products: [
         .library(
             name: "Discoverer",
-            targets: ["Injector"])
+            targets: ["Discoverer"])
     ],
     targets: [
         .target(
-            name: "Injector",
+            name: "Discoverer",
             dependencies: [],
-            path: "Injector"),
+            path: "Discoverer"),
         .testTarget(
-            name: "InjectorTests",
-            dependencies: ["Injector"],
-            path: "InjectorTests")
+            name: "DiscovererTests",
+            dependencies: ["Discoverer"],
+            path: "DiscovererTests")
     ]
 )

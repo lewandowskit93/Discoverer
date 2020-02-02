@@ -1,13 +1,13 @@
 //
 //  InjectorTests.swift
-//  Injector
+//  Discoverer
 //
 //  Created by Tomasz Lewandowski on 01/02/2020.
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
 import XCTest
-@testable import Injector
+@testable import Discoverer
 
 final class InjectorTests: XCTestCase {
     

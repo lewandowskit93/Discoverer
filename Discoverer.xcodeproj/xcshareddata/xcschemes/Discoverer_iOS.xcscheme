@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "884401B913C1759260E2611C"
-               BuildableName = "Injector.framework"
-               BlueprintName = "Injector_tvOS"
-               ReferencedContainer = "container:Injector.xcodeproj">
+               BlueprintIdentifier = "CBCDCF8FAA98187DD6585592"
+               BuildableName = "Discoverer.framework"
+               BlueprintName = "Discoverer_iOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,20 +34,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D48AE638499BEBD21CC963FC"
-               BuildableName = "InjectorTests.xctest"
-               BlueprintName = "InjectorTests_tvOS"
-               ReferencedContainer = "container:Injector.xcodeproj">
+               BlueprintIdentifier = "2A6A68BADCA8D2DF20143B9A"
+               BuildableName = "DiscovererTests.xctest"
+               BlueprintName = "DiscovererTests_iOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "884401B913C1759260E2611C"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_tvOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "CBCDCF8FAA98187DD6585592"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_iOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -70,10 +70,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "884401B913C1759260E2611C"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_tvOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "CBCDCF8FAA98187DD6585592"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_iOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -91,10 +91,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "884401B913C1759260E2611C"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_tvOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "CBCDCF8FAA98187DD6585592"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_iOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
