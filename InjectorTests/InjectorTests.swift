@@ -100,4 +100,29 @@ final class InjectorTests: XCTestCase {
             XCTFail("Invalid error thrown")
         }
     }
+    
+    func testRegister_WhenCalledAndRewriteIsNotAllowed_ShouldThrow() {
+        do {
+            sut = Injector(allowRewrite: false)
+            try sut.register(as: PFoo.self, injectable: .singleton(Foo()))
+            try sut.register(as: PFoo.self, injectable: .singleton(Foo()))
+            XCTFail("Expected to throw error")
+        } catch InjectorError.alreadyRegistered {
+            // nothing to do
+        } catch {
+            XCTFail("Invalid error thrown")
+        }
+    }
+    
+    func testRegister_WhenCalledAndRewriteIsAllowed_ShouldNotThrow() throws {
+        sut = Injector(allowRewrite: true)
+        try sut.register(as: PFoo.self, injectable: .singleton(Foo()))
+        try sut.register(as: PFoo.self, injectable: .singleton(Foo()))
+    }
+    
+    func testRegister_WhenCalledAndRewriteIsNotAllowedButServiceWasUnregistered_ShouldNotThrow() throws {
+        sut = Injector(allowRewrite: false)
+        try sut.register(as: PFoo.self, injectable: .singleton(Foo())).unregister(type: PFoo.self)
+        try sut.register(as: PFoo.self, injectable: .singleton(Foo()))
+    }
 }
