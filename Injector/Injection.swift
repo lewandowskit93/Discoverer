@@ -1,12 +1,12 @@
 //
-//  Injectable.swift
+//  Injection.swift
 //  Injector
 //
 //  Created by Tomasz Lewandowski on 01/02/2020.
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
-public enum Injectable<T> {
+public enum Injection<T> {
     public typealias Factory = () -> T
     case singleton(_ value: T)
     case lazySingleton( _ value: T?, _ factory: Factory)
@@ -26,8 +26,8 @@ public enum Injectable<T> {
     }
 }
 
-internal extension Injectable {
-    func any() -> AnyInjectable {
+internal extension Injection {
+    func any() -> AnyInjection {
         switch self {
         case .singleton(let value):
             return .singleton(value)

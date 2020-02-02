@@ -11,9 +11,9 @@ import Injector
 struct RepositoriesConfigurator {
     static func configure(injector: Injector) throws {
         _ = try? Environment.repositories
-            .register(as: PRepositoryA.self, injectable: .lazySingleton(nil, { RepositoryA() }))
-            .register(as: PRepositoryB.self, injectable: .singleton(LocalRepositoryB()))
+            .register(as: PRepositoryA.self, injection: .lazySingleton(nil, { RepositoryA() }))
+            .register(as: PRepositoryB.self, injection: .singleton(LocalRepositoryB()))
             .unregister(type: PRepositoryB.self)
-            .register(as: PRepositoryB.self, injectable: .singleton(NetworkRepositoryB()))
+            .register(as: PRepositoryB.self, injection: .singleton(NetworkRepositoryB()))
     }
 }

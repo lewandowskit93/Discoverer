@@ -7,7 +7,7 @@
 //
 
 public final class Injector {
-    private var injectables: [ObjectIdentifier: AnyInjectable] = [:]
+    private var injections: [ObjectIdentifier: AnyInjection] = [:]
     public var allowRewrite: Bool
     
     public init(allowRewrite: Bool = false) {
@@ -19,16 +19,16 @@ public final class Injector {
     }
             
     public func get<T>(_ type: T.Type = T.self) throws -> T {
-        guard var injectable = injectables[ObjectIdentifier(T.self)] else {
+        guard var injection = injections[ObjectIdentifier(T.self)] else {
             throw InjectorError.notRegistered
         }
-        let instance: T = try injectable.instance(as: T.self)
-        injectables[ObjectIdentifier(T.self)] = injectable
+        let instance: T = try injection.instance(as: T.self)
+        injections[ObjectIdentifier(T.self)] = injection
         return instance
     }
         
-    @discardableResult public func register<T>(as type: T.Type, injectable: Injectable<T>) throws -> Injector {
-        try register(as: T.self, injectable: injectable.any())
+    @discardableResult public func register<T>(as type: T.Type, injection: Injection<T>) throws -> Injector {
+        try register(as: T.self, injection: injection.any())
         return self
     }
     
@@ -36,19 +36,19 @@ public final class Injector {
         guard isRegistered(type: type) else {
             throw InjectorError.notRegistered
         }
-        injectables.removeValue(forKey: ObjectIdentifier(T.self))
+        injections.removeValue(forKey: ObjectIdentifier(T.self))
         return self
     }
         
     public func isRegistered<T>(type: T.Type) -> Bool {
-        return injectables.keys.contains(ObjectIdentifier(T.self))
+        return injections.keys.contains(ObjectIdentifier(T.self))
     }
     
-    @discardableResult private func register<T>(as type: T.Type, injectable: AnyInjectable) throws -> Injector {
+    @discardableResult private func register<T>(as type: T.Type, injection: AnyInjection) throws -> Injector {
         guard !isRegistered(type: type) || allowRewrite else {
             throw InjectorError.alreadyRegistered
         }
-        injectables[ObjectIdentifier(T.self)] = injectable
+        injections[ObjectIdentifier(T.self)] = injection
         return self
     }
 }

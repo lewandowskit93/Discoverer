@@ -16,7 +16,7 @@ final class InjectedTests: XCTestCase {
             @Injected(injector: injector) var foo: Foo
         }
         let instance = Foo()
-        try SUT.injector.register(as: Foo.self, injectable: .singleton(instance))
+        try SUT.injector.register(as: Foo.self, injection: .singleton(instance))
         let sut = SUT()
         XCTAssertTrue(sut.foo === instance)
     }

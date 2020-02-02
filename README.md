@@ -68,9 +68,9 @@ let package = Package(
 
 Here is a quick overview of functionalities and concepts used in **Injector**.
 
-### Injectable
+### Injection
 
-**Injectable** is an enum which represents single Injection. It can be one of:
+**Injection** is an enum which represents single Injection. It can be one of:
 - **Singleton** - returns same instance everytime e.g.: ```swift Injectable<PFoo>.singleton(Foo()) ```
 - **LazySingleton** - if there is no instance it uses factory to create one, then it returns this instance everytime e.g.: ```swift Injectable<PFoo>.lazySingleton(nil, { Foo() }) ```
 - **Factory** - returns new instance everytime e.g.: ```swift Injectable<PFoo>.factory({ Foo() }) ```
@@ -82,7 +82,7 @@ Here is a quick overview of functionalities and concepts used in **Injector**.
 - getter - returning service and throwing error if not registered e.g.: ```swift injector.get(PFoo.self)```
 
 ### Injected
-A property wrapper that marks a property as injected with the service provided by given injector.
+**Injected** is a property wrapper that marks a property as injected with the service provided by given Injector.
 Example usage:
 ```swift
 @Injected(injector: Environment.services) var foo: PFoo

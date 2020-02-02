@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		00BB64B137FD130B62390E5B /* Injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 095EBAEE7962B5F66C11F7D2 /* Injector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01FDBF91D19F7921C51190D4 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injectable.swift */; };
+		01FDBF91D19F7921C51190D4 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injection.swift */; };
 		02066614F63FDCC9C19CF99F /* Injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 095EBAEE7962B5F66C11F7D2 /* Injector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FB4738792FB22EE3C5A3EC6 /* Injector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99A570CDBE0213B3C30A6462 /* Injector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		259894BCA13CB218822E21CA /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injectable.swift */; };
+		259894BCA13CB218822E21CA /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injection.swift */; };
 		28B28D49D6B3F2E4D2654680 /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1CC47BF49D4389198B872 /* Foo.swift */; };
 		2D0A507FD34EF92096C636A2 /* Injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 095EBAEE7962B5F66C11F7D2 /* Injector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EFACC2B498613EFCF71500D /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8985D76D5C45C7B411C9D8E /* Injector.swift */; };
 		393BF0431691E5FC9FB34A4E /* InjectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165CAB266A577BC9100DF6B3 /* InjectorError.swift */; };
 		3CFDF7A7C67342C2A08E9F63 /* Pods_InjectorTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D8B1A278B73B70D74721A1 /* Pods_InjectorTests_tvOS.framework */; };
-		41CC4D331C17C9DF79AAE06F /* AnyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjectable.swift */; };
-		443755D77F97E294A71A2A26 /* AnyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjectable.swift */; };
+		41CC4D331C17C9DF79AAE06F /* AnyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjection.swift */; };
+		443755D77F97E294A71A2A26 /* AnyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjection.swift */; };
 		4D2178839B40BD528D16D505 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C7CA2950EB050C394638A /* Injected.swift */; };
 		508C685586F58811348DAA0A /* Injector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99A570CDBE0213B3C30A6462 /* Injector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51D577F8B48A9160D0938C6A /* InjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0447A535A7B67CB53DC3 /* InjectorTests.swift */; };
@@ -36,7 +36,7 @@
 		76862C2DC79CDF8E4CAE7A83 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8985D76D5C45C7B411C9D8E /* Injector.swift */; };
 		8340792E07EE0CE6BBA4BB86 /* Injector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A570CDBE0213B3C30A6462 /* Injector.framework */; };
 		83E450317C0A922E000A0236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08B2707B6CC926DF1270D80 /* Assets.xcassets */; };
-		8C951D67ACEAB2C178F0D885 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injectable.swift */; };
+		8C951D67ACEAB2C178F0D885 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injection.swift */; };
 		9131B5235C158D826840BA88 /* Pods_Injector_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC38288D06C557B61FB7897 /* Pods_Injector_macOS.framework */; };
 		9339F6DE8B1847748B3BB15C /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C7CA2950EB050C394638A /* Injected.swift */; };
 		94D119E2F1A1AD7ED6B45BBF /* Injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 095EBAEE7962B5F66C11F7D2 /* Injector.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,7 +47,7 @@
 		9A082057AC5A156F1EA62954 /* InjectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165CAB266A577BC9100DF6B3 /* InjectorError.swift */; };
 		9BCFFDB79849911A34FD03D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE82098EC4BFE6299D2812 /* ViewController.swift */; };
 		9F7058C3280524A8B08ACC1D /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC721C9C68CC4DF3C58FA35 /* Bar.swift */; };
-		A46828A571C7AFAE2C7FF4CE /* AnyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjectable.swift */; };
+		A46828A571C7AFAE2C7FF4CE /* AnyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjection.swift */; };
 		AA0E8B35D81BC00F0C9EA6A9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D0FFAD4C02B5FD557F9E9 /* Environment.swift */; };
 		ADB442EF8CF3360224E90424 /* ServiceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1ED21277CF9C6E8DBE8D3 /* ServiceConfigurator.swift */; };
 		C23FF1FF0647A37815644C6B /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC721C9C68CC4DF3C58FA35 /* Bar.swift */; };
@@ -66,16 +66,16 @@
 		F149CDAE23E5B0CC009B2B7F /* RepositoryA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDAD23E5B0CC009B2B7F /* RepositoryA.swift */; };
 		F149CDB023E5B139009B2B7F /* RepositoryB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDAF23E5B139009B2B7F /* RepositoryB.swift */; };
 		F149CDB223E5C0E3009B2B7F /* RepositoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDB123E5C0E3009B2B7F /* RepositoriesConfigurator.swift */; };
-		F149CDBF23E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
-		F149CDC023E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
-		F149CDC123E70A76009B2B7F /* InjectableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectableTests.swift */; };
+		F149CDBF23E70A76009B2B7F /* InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectionTests.swift */; };
+		F149CDC023E70A76009B2B7F /* InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectionTests.swift */; };
+		F149CDC123E70A76009B2B7F /* InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDBE23E70A76009B2B7F /* InjectionTests.swift */; };
 		F149CDC323E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
 		F149CDC423E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
 		F149CDC523E71127009B2B7F /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F149CDC223E71127009B2B7F /* InjectedTests.swift */; };
-		F20286495049CE235A59BF9F /* AnyInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjectable.swift */; };
+		F20286495049CE235A59BF9F /* AnyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A104849091A4CA202996907 /* AnyInjection.swift */; };
 		F545568E1F8F470A66B9BCA6 /* Pods_InjectorTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE51104DA00A71AD6439C5 /* Pods_InjectorTests_macOS.framework */; };
 		F77733BAAC487EAE6692557E /* Injector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A570CDBE0213B3C30A6462 /* Injector.framework */; };
-		FF40E84A57B63CCA9F82AA9B /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injectable.swift */; };
+		FF40E84A57B63CCA9F82AA9B /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE232653D159686A5A24944 /* Injection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,13 +181,13 @@
 		49892F0308765FF5C97FB841 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		4BC66F5F857E4952CB852682 /* FooViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooViewModel.swift; sourceTree = "<group>"; };
 		4BC721C9C68CC4DF3C58FA35 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
-		4DE232653D159686A5A24944 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		4DE232653D159686A5A24944 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		570976436093E0B5AF022FD9 /* Pods-InjectorTests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InjectorTests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-InjectorTests_iOS/Pods-InjectorTests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		598B94B59B5DD95CCD138258 /* PFoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFoo.swift; sourceTree = "<group>"; };
 		628B1F5FF0BE87C03D2AD3D4 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F85404D7CE227B89A298D6 /* InjectorTests_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InjectorTests_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		64D469A746454771E7E78918 /* Pods-Injector_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Injector_macOS.debug.xcconfig"; path = "Target Support Files/Pods-Injector_macOS/Pods-Injector_macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6A104849091A4CA202996907 /* AnyInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyInjectable.swift; sourceTree = "<group>"; };
+		6A104849091A4CA202996907 /* AnyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyInjection.swift; sourceTree = "<group>"; };
 		83B3F92FC4C440DBAE17A6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		946C407A05FA586735B790F6 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		99A570CDBE0213B3C30A6462 /* Injector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Injector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,7 +216,7 @@
 		F149CDAD23E5B0CC009B2B7F /* RepositoryA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryA.swift; sourceTree = "<group>"; };
 		F149CDAF23E5B139009B2B7F /* RepositoryB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryB.swift; sourceTree = "<group>"; };
 		F149CDB123E5C0E3009B2B7F /* RepositoriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesConfigurator.swift; sourceTree = "<group>"; };
-		F149CDBE23E70A76009B2B7F /* InjectableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableTests.swift; sourceTree = "<group>"; };
+		F149CDBE23E70A76009B2B7F /* InjectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionTests.swift; sourceTree = "<group>"; };
 		F149CDC223E71127009B2B7F /* InjectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedTests.swift; sourceTree = "<group>"; };
 		FB3D3180830A6954D35F66B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FBCEF291511E1912D69E4C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -345,9 +345,9 @@
 		6CE3F2684C09AB96450B76B4 /* Injector */ = {
 			isa = PBXGroup;
 			children = (
-				6A104849091A4CA202996907 /* AnyInjectable.swift */,
+				6A104849091A4CA202996907 /* AnyInjection.swift */,
 				FB3D3180830A6954D35F66B0 /* Info.plist */,
-				4DE232653D159686A5A24944 /* Injectable.swift */,
+				4DE232653D159686A5A24944 /* Injection.swift */,
 				E44C7CA2950EB050C394638A /* Injected.swift */,
 				095EBAEE7962B5F66C11F7D2 /* Injector.h */,
 				A8985D76D5C45C7B411C9D8E /* Injector.swift */,
@@ -376,7 +376,7 @@
 				16480CF1FB427960BF733BA0 /* InjectorTests_tvOS-Bridging-Header.h */,
 				43CD0447A535A7B67CB53DC3 /* InjectorTests.swift */,
 				598B94B59B5DD95CCD138258 /* PFoo.swift */,
-				F149CDBE23E70A76009B2B7F /* InjectableTests.swift */,
+				F149CDBE23E70A76009B2B7F /* InjectionTests.swift */,
 				F149CDC223E71127009B2B7F /* InjectedTests.swift */,
 			);
 			path = InjectorTests;
@@ -857,8 +857,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41CC4D331C17C9DF79AAE06F /* AnyInjectable.swift in Sources */,
-				8C951D67ACEAB2C178F0D885 /* Injectable.swift in Sources */,
+				41CC4D331C17C9DF79AAE06F /* AnyInjection.swift in Sources */,
+				8C951D67ACEAB2C178F0D885 /* Injection.swift in Sources */,
 				C7689C01CAF48F5EC606AE9E /* Injected.swift in Sources */,
 				E82AE5784787793AE2A402BA /* Injector.swift in Sources */,
 				6ED981D8385EEDBAAE9B3310 /* InjectorError.swift in Sources */,
@@ -869,7 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F149CDC023E70A76009B2B7F /* InjectableTests.swift in Sources */,
+				F149CDC023E70A76009B2B7F /* InjectionTests.swift in Sources */,
 				9F7058C3280524A8B08ACC1D /* Bar.swift in Sources */,
 				EBA62B1F2BF39B0784A59819 /* Foo.swift in Sources */,
 				F149CDC423E71127009B2B7F /* InjectedTests.swift in Sources */,
@@ -882,8 +882,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A46828A571C7AFAE2C7FF4CE /* AnyInjectable.swift in Sources */,
-				259894BCA13CB218822E21CA /* Injectable.swift in Sources */,
+				A46828A571C7AFAE2C7FF4CE /* AnyInjection.swift in Sources */,
+				259894BCA13CB218822E21CA /* Injection.swift in Sources */,
 				4D2178839B40BD528D16D505 /* Injected.swift in Sources */,
 				96420FA623448532F27B1DF3 /* Injector.swift in Sources */,
 				393BF0431691E5FC9FB34A4E /* InjectorError.swift in Sources */,
@@ -894,7 +894,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F149CDBF23E70A76009B2B7F /* InjectableTests.swift in Sources */,
+				F149CDBF23E70A76009B2B7F /* InjectionTests.swift in Sources */,
 				C23FF1FF0647A37815644C6B /* Bar.swift in Sources */,
 				5CBE4819B9241D24B7816A6F /* Foo.swift in Sources */,
 				F149CDC323E71127009B2B7F /* InjectedTests.swift in Sources */,
@@ -907,8 +907,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20286495049CE235A59BF9F /* AnyInjectable.swift in Sources */,
-				FF40E84A57B63CCA9F82AA9B /* Injectable.swift in Sources */,
+				F20286495049CE235A59BF9F /* AnyInjection.swift in Sources */,
+				FF40E84A57B63CCA9F82AA9B /* Injection.swift in Sources */,
 				9339F6DE8B1847748B3BB15C /* Injected.swift in Sources */,
 				76862C2DC79CDF8E4CAE7A83 /* Injector.swift in Sources */,
 				E502AE0E5F8860F84E43A926 /* InjectorError.swift in Sources */,
@@ -919,8 +919,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				443755D77F97E294A71A2A26 /* AnyInjectable.swift in Sources */,
-				01FDBF91D19F7921C51190D4 /* Injectable.swift in Sources */,
+				443755D77F97E294A71A2A26 /* AnyInjection.swift in Sources */,
+				01FDBF91D19F7921C51190D4 /* Injection.swift in Sources */,
 				F0C4C246415F18F1CBE9662A /* Injected.swift in Sources */,
 				2EFACC2B498613EFCF71500D /* Injector.swift in Sources */,
 				9A082057AC5A156F1EA62954 /* InjectorError.swift in Sources */,
@@ -931,7 +931,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F149CDC123E70A76009B2B7F /* InjectableTests.swift in Sources */,
+				F149CDC123E70A76009B2B7F /* InjectionTests.swift in Sources */,
 				F09AA83B026CC07775839D04 /* Bar.swift in Sources */,
 				28B28D49D6B3F2E4D2654680 /* Foo.swift in Sources */,
 				F149CDC523E71127009B2B7F /* InjectedTests.swift in Sources */,

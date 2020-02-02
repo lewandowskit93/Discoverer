@@ -11,7 +11,7 @@ import Injector
 struct ServiceConfigurator {
     static func configure(injector: Injector) throws {
         _ = try? Environment.services
-            .register(as: PServiceA.self, injectable: .singleton(ServiceA()))
-            .register(as: PServiceB.self, injectable: .factory({ ServiceB() }))
+            .register(as: PServiceA.self, injection: .singleton(ServiceA()))
+            .register(as: PServiceB.self, injection: .factory({ ServiceB() }))
     }
 }
