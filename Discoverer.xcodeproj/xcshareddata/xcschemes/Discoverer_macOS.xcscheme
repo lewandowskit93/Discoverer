@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9BE566B0C7A2DD9489ED6551"
-               BuildableName = "Injector.framework"
-               BlueprintName = "Injector_macOS"
-               ReferencedContainer = "container:Injector.xcodeproj">
+               BlueprintIdentifier = "59189BF5A06A83511D1E1914"
+               BuildableName = "Discoverer.framework"
+               BlueprintName = "Discoverer_macOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,20 +34,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5616D8968F4324AEEFBF5F9D"
-               BuildableName = "InjectorTests.xctest"
-               BlueprintName = "InjectorTests_macOS"
-               ReferencedContainer = "container:Injector.xcodeproj">
+               BlueprintIdentifier = "EBB37996DF76F0E7188A1177"
+               BuildableName = "DiscovererTests.xctest"
+               BlueprintName = "DiscovererTests_macOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9BE566B0C7A2DD9489ED6551"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_macOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "59189BF5A06A83511D1E1914"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_macOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -70,10 +70,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9BE566B0C7A2DD9489ED6551"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_macOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "59189BF5A06A83511D1E1914"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_macOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -91,10 +91,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9BE566B0C7A2DD9489ED6551"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_macOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "59189BF5A06A83511D1E1914"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_macOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>

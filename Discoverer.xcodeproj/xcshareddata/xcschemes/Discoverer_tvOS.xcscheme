@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5FA20B56EFD095EE12001281"
-               BuildableName = "Injector.framework"
-               BlueprintName = "Injector_watchOS"
-               ReferencedContainer = "container:Injector.xcodeproj">
+               BlueprintIdentifier = "7223276AAF061486920AC78C"
+               BuildableName = "Discoverer.framework"
+               BlueprintName = "Discoverer_tvOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,14 +30,24 @@
       onlyGenerateCoverageForSpecifiedTargets = "NO"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "14E01A3616AEB9CA09CB1FD1"
+               BuildableName = "DiscovererTests.xctest"
+               BlueprintName = "DiscovererTests_tvOS"
+               ReferencedContainer = "container:Discoverer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FA20B56EFD095EE12001281"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_watchOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "7223276AAF061486920AC78C"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_tvOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -60,10 +70,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FA20B56EFD095EE12001281"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_watchOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "7223276AAF061486920AC78C"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_tvOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -81,10 +91,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5FA20B56EFD095EE12001281"
-            BuildableName = "Injector.framework"
-            BlueprintName = "Injector_watchOS"
-            ReferencedContainer = "container:Injector.xcodeproj">
+            BlueprintIdentifier = "7223276AAF061486920AC78C"
+            BuildableName = "Discoverer.framework"
+            BlueprintName = "Discoverer_tvOS"
+            ReferencedContainer = "container:Discoverer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
