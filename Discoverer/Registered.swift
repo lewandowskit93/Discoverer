@@ -23,4 +23,8 @@ public class Registered<Service> {
         //swiftlint:disable force_try
         try! injector.register(as: Service.self, injection: wrappedValue)
     }
+    
+    deinit {
+        try! injector.unregister(type: Service.self)
+    }
 }
