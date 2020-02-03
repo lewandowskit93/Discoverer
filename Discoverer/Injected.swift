@@ -15,6 +15,10 @@ public class Injected<Service> {
         return try! injector.get(Service.self)
     }
     
+    public init() {
+        self.injector = Injector.default
+    }
+    
     public init(injector: Injector) {
         self.injector = injector
     }

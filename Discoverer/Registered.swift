@@ -17,6 +17,14 @@ public class Registered<Service> {
         }
     }
     
+    public init(wrappedValue: Injection<Service>) {
+        self.injector = Injector.default
+        self.injected = wrappedValue
+        //swiftlint:disable force_try
+        try! injector.register(as: Service.self, injection: wrappedValue)
+    }
+
+    
     public init(wrappedValue: Injection<Service>, inInjector injector: Injector) {
         self.injector = injector
         self.injected = wrappedValue

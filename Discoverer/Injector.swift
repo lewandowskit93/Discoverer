@@ -7,6 +7,8 @@
 //
 
 public final class Injector {
+    public static var `default`: Injector = Injector()
+    
     private var injections: [ObjectIdentifier: AnyInjection] = [:]
     public var allowRewrite: Bool
     
