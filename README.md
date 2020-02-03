@@ -108,14 +108,14 @@ injector.get(PFoo.self)
 **Injected** is a property wrapper that marks a property as injected with the service provided by given Injector.
 Example usage:
 ```swift
-@Injected(injector: Environment.services) var foo: PFoo
+@Injected var foo: PFoo
 ```
 
 ### Registered
 **Registered** is a property wrapper that marks an injection as registered in given Injector.
 Example usage:
 ```swift
-@Registered(inInjector: Environment.services)
+@Registered
 var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
 ```
 
@@ -153,12 +153,12 @@ class RepositoryB: PRepositoryB {
 ```
 
 Then configure the injector as follows:
-```
+```swift
 struct Configurator {
-    static func configure(injector: Injector) throws {
-        _ = try? Environment.repositories
+    static func configure(repositories: Injector, services: Injector) throws {
+        _ = try? repositories
             .register(as: PRepositoryB.self, injectable: .singleton(RepositoryB()))
-        _ = try? Environment.services
+        _ = try? services
             .register(as: PServiceA.self, injectable: .factory({ ServiceA() }))
     }
 }
