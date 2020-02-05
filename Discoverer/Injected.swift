@@ -6,6 +6,12 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
+/**
++ A property wrapper used to retrieve injected service from injector.
++ Example usage:
++ @Injected
++ var serviceAInjection: PService
++ */
 @propertyWrapper
 public class Injected<Service> {
     private let injector: Injector

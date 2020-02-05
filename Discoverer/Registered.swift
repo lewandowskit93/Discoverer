@@ -6,6 +6,12 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
+/**
+ A property wrapper used to register injections into the injectors.
+ Example usage:
+ @Registered
+ var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
+ */
 @propertyWrapper
 public class Registered<Service> {
     private let injector: Injector

@@ -110,7 +110,10 @@ Example usage:
 ```swift
 @Injected var foo: PFoo
 ```
-
+Injected also allows you to specify which container to use as follows:
+```swift
+@Injected(injector: Environment.services) var serviceA: PServiceA
+```
 ### Registered
 **Registered** is a property wrapper that marks an injection as registered in given Injector.
 Example usage:
@@ -118,7 +121,11 @@ Example usage:
 @Registered
 var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
 ```
-
+Registered also allows you to specify which container to use as follows:
+```swift
+@Registered(inInjector: Environment.services)
+var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
+```
 ## Example
 
 Given the environment

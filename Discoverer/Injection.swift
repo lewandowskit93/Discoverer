@@ -6,12 +6,17 @@
 //  Copyright © 2020 LionSoftware.org. All rights reserved.
 //
 
+///  Represents a single dependency injection
 public enum Injection<T> {
     public typealias Factory = () -> T
+    /// Returns the same instance
     case singleton(_ value: T)
+    /// Returns the same instance created lazily on demand
     case lazySingleton( _ value: T?, _ factory: Factory)
+    /// Returns new instance each time instance is accessed
     case factory(_ factory: Factory)
-        
+    
+    /// Returns instance held by injection and creates new one if necessarily
     mutating public func instance() -> T {
         switch self {
         case .singleton(let value):
