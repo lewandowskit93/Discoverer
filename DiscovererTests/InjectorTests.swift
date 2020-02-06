@@ -51,14 +51,12 @@ final class InjectorTests: XCTestCase {
         XCTAssert(foo === instance)
     }
     
-    func testGet_WhenTypeNotRegistered_ShouldThrowError() {
+    func testGet_WhenTypeNotRegistered_ShouldThrowError() throws {
         do {
             let _: PFoo = try sut.get(PFoo.self)
             XCTFail("Expected to throw error")
         } catch InjectorError.notRegistered {
             // nothing to do
-        } catch {
-            XCTFail("Invalid error thrown")
         }
     }
         
@@ -69,23 +67,19 @@ final class InjectorTests: XCTestCase {
     func testRegister_WhenAlreadyRegistered_ShouldThrowError() throws {
         try sut.register(as: PFoo.self, injection: .singleton(Foo()))
         do {
-            try sut.register(as: PFoo.self, injection: .singleton(Bar()))
+            try sut.register(as: PFoo.self, injection: .singleton(Foo()))
             XCTFail("Expected to throw error")
         } catch InjectorError.alreadyRegistered {
             // nothing to do
-        } catch {
-            XCTFail("Invalid error thrown")
         }
     }
     
-    func testUnregister_WhenNotRegistered_ShouldThrowError() {
+    func testUnregister_WhenNotRegistered_ShouldThrowError() throws {
         do {
             try sut.unregister(type: PFoo.self)
             XCTFail("Expected to throw error")
         } catch InjectorError.notRegistered {
             // nothing to do
-        } catch {
-            XCTFail("Invalid error thrown")
         }
     }
     
@@ -96,12 +90,10 @@ final class InjectorTests: XCTestCase {
             XCTFail("Expected to throw error")
         } catch InjectorError.notRegistered {
             // nothing to do
-        } catch {
-            XCTFail("Invalid error thrown")
         }
     }
     
-    func testRegister_WhenCalledAndRewriteIsNotAllowed_ShouldThrow() {
+    func testRegister_WhenCalledAndRewriteIsNotAllowed_ShouldThrow() throws {
         do {
             sut = Injector(allowRewrite: false)
             try sut.register(as: PFoo.self, injection: .singleton(Foo()))
@@ -109,8 +101,6 @@ final class InjectorTests: XCTestCase {
             XCTFail("Expected to throw error")
         } catch InjectorError.alreadyRegistered {
             // nothing to do
-        } catch {
-            XCTFail("Invalid error thrown")
         }
     }
     
