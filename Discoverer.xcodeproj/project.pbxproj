@@ -17,7 +17,6 @@
 		1CF0EDE61FCF819875D8B251 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DC3679ABF10948791DF73 /* Injected.swift */; };
 		1EE79F18C06155CAEEDADD00 /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88997023D204500E406E71 /* Foo.swift */; };
 		234A8EF986ADFDE2F31A0E88 /* InjectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A31564224398E712319C8 /* InjectorError.swift */; };
-		27606F37A4788C33790BD165 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375F911214C36D9777FEBF4 /* Bar.swift */; };
 		2B0A17869F0DC07F1306EDE9 /* Registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D795BE0A7FE6C875937B7AF /* Registered.swift */; };
 		2DBA8FBBB7CDF72142B331A4 /* Discoverer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF26105B59184174D70017D0 /* Discoverer.framework */; };
 		2EA02531B8C125AD14DDCCEB /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C044980DCCC1F448A1B5F9 /* Injection.swift */; };
@@ -50,13 +49,11 @@
 		82E1D8B7EF05A0A44162A61D /* ServiceB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5427DF7C7867A4F72077066 /* ServiceB.swift */; };
 		84EE23A093640B849F012416 /* Discoverer.h in Headers */ = {isa = PBXBuildFile; fileRef = 46319854CD361E1E33807602 /* Discoverer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C73AEC40882D0882FB326AB /* Registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D795BE0A7FE6C875937B7AF /* Registered.swift */; };
-		8DE7323B8999AF1DFBE9DB37 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375F911214C36D9777FEBF4 /* Bar.swift */; };
 		8FDA118973A606E4E3371E95 /* InjectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A31564224398E712319C8 /* InjectorError.swift */; };
 		8FED37AE3C3C0A9029C2A700 /* Discoverer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF26105B59184174D70017D0 /* Discoverer.framework */; };
 		90C6BCBD59AE034BD424756E /* RegisteredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32D99F13018C91EE1ECD8B /* RegisteredTests.swift */; };
 		90E09881B876D540D2D5A4DD /* InjectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A31564224398E712319C8 /* InjectorError.swift */; };
 		9B98B2E658FB16BEB50CBE05 /* Pods_Discoverer_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CB4B7C9A2F91F6190FDE8 /* Pods_Discoverer_tvOS.framework */; };
-		A15A97A727BC7F13EEB96457 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375F911214C36D9777FEBF4 /* Bar.swift */; };
 		A3A126312505E34850024D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC7181199A5D090F4AD016 /* AppDelegate.swift */; };
 		A912DE88A7A5346D7561F4A0 /* Discoverer.h in Headers */ = {isa = PBXBuildFile; fileRef = 46319854CD361E1E33807602 /* Discoverer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC2C25DCC08C4D5ACE6C8865 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C044980DCCC1F448A1B5F9 /* Injection.swift */; };
@@ -171,7 +168,6 @@
 		0D72E2D12DE92E6B61CF8B03 /* Pods-Discoverer_watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discoverer_watchOS.release.xcconfig"; path = "Target Support Files/Pods-Discoverer_watchOS/Pods-Discoverer_watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		0EA5CD15900420599B8C4B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		125F9B331A7B822DA56191F0 /* Pods_Discoverer_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Discoverer_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1375F911214C36D9777FEBF4 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		16A6D367BC0A6B2BFFF7CB68 /* Pods_DiscovererTests_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscovererTests_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18721E3F56AC8E1B8AAAE2DA /* Discoverer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Discoverer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19961481245805AA9A748F86 /* Pods_Discoverer_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Discoverer_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,7 +422,6 @@
 		EBCBC9DDB6F14E1AD15B55A1 /* DiscovererTests */ = {
 			isa = PBXGroup;
 			children = (
-				1375F911214C36D9777FEBF4 /* Bar.swift */,
 				954E52288C47E69503F3A53F /* DiscovererTests_iOS-Bridging-Header.h */,
 				C3F07831837044351F625ECB /* DiscovererTests_macOS-Bridging-Header.h */,
 				9C995B4E2C2EE38863DA615A /* DiscovererTests_tvOS-Bridging-Header.h */,
@@ -915,7 +910,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DE7323B8999AF1DFBE9DB37 /* Bar.swift in Sources */,
 				1EE79F18C06155CAEEDADD00 /* Foo.swift in Sources */,
 				B69602C2916E8846EFE003FA /* InjectedTests.swift in Sources */,
 				3E3FB0CA6EA23E58A48CA469 /* InjectionTests.swift in Sources */,
@@ -929,7 +923,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A15A97A727BC7F13EEB96457 /* Bar.swift in Sources */,
 				7D37F273FC223993EA1312A2 /* Foo.swift in Sources */,
 				FFC54221241A829FF02F781B /* InjectedTests.swift in Sources */,
 				D103609F2F1922452A8D6F40 /* InjectionTests.swift in Sources */,
@@ -956,7 +949,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27606F37A4788C33790BD165 /* Bar.swift in Sources */,
 				6A2FC729489EC1C8255DFD7A /* Foo.swift in Sources */,
 				168BF4DD20C72396A1A934E1 /* InjectedTests.swift in Sources */,
 				792B38C0C099C347F9F24228 /* InjectionTests.swift in Sources */,

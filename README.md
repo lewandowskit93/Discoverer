@@ -47,7 +47,7 @@ github "lewandowskit93/Discoverer"
 
 To install Discoverer using **Swift Package Manager** go through following steps:
 
-1. Add following package dependency in you **Package.swift** ``` .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.1") ```
+1. Add following package dependency in you **Package.swift** ``` .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.3") ```
 2. Add following target dependency in your **Package.swift** ``` dependencies: ["Discoverer"]) ```
 
 For instance this is how it might look like:
@@ -62,7 +62,7 @@ let package = Package(
             targets: ["YourLibrary"])
     ],
     dependencies: [
-        .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.1")
+        .package(url: "https://github.com/lewandowskit93/Discoverer.git", from: "0.0.3")
     ],
     targets: [
         .target(
@@ -79,31 +79,53 @@ Here is a quick overview of functionalities and concepts used in **Discoverer**.
 ### Injection
 
 **Injection** is an enum which represents single Injection. It can be one of:
-- **Singleton** - returns same instance everytime e.g.: ```swift Injectable<PFoo>.singleton(Foo()) ```
-- **LazySingleton** - if there is no instance it uses factory to create one, then it returns this instance everytime e.g.: ```swift Injectable<PFoo>.lazySingleton(nil, { Foo() }) ```
-- **Factory** - returns new instance everytime e.g.: ```swift Injectable<PFoo>.factory({ Foo() }) ```
+- **Singleton** - returns same instance everytime e.g.: 
+```swift
+Injectable<PFoo>.singleton(Foo())
+```
+- **LazySingleton** - if there is no instance it uses factory to create one, then it returns this instance everytime e.g.: 
+```swift
+Injectable<PFoo>.lazySingleton(nil, { Foo() })
+```
+- **Factory** - returns new instance everytime e.g.: 
+```swift
+Injectable<PFoo>.factory({ Foo() })
+```
 
 ### Injector
 
 **Injector** manages injected services. It grants access to the service by providing:
-- subscript - returning service as optional (nil if not registered) e.g.: ```swift injector[PFoo.self]```
-- getter - returning service and throwing error if not registered e.g.: ```swift injector.get(PFoo.self)```
+- subscript - returning service as optional (nil if not registered) e.g.:
+```swift
+injector[PFoo.self]
+```
+- getter - returning service and throwing error if not registered e.g.: 
+```swift
+injector.get(PFoo.self)
+```
 
 ### Injected
 **Injected** is a property wrapper that marks a property as injected with the service provided by given Injector.
 Example usage:
 ```swift
-@Injected(injector: Environment.services) var foo: PFoo
+@Injected var foo: PFoo
 ```
-
+Injected also allows you to specify which container to use as follows:
+```swift
+@Injected(injector: Environment.services) var serviceA: PServiceA
+```
 ### Registered
 **Registered** is a property wrapper that marks an injection as registered in given Injector.
 Example usage:
 ```swift
+@Registered
+var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
+```
+Registered also allows you to specify which container to use as follows:
+```swift
 @Registered(inInjector: Environment.services)
 var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())
 ```
-
 ## Example
 
 Given the environment
@@ -138,12 +160,12 @@ class RepositoryB: PRepositoryB {
 ```
 
 Then configure the injector as follows:
-```
+```swift
 struct Configurator {
-    static func configure(injector: Injector) throws {
-        _ = try? Environment.repositories
+    static func configure(repositories: Injector, services: Injector) throws {
+        _ = try? repositories
             .register(as: PRepositoryB.self, injectable: .singleton(RepositoryB()))
-        _ = try? Environment.services
+        _ = try? services
             .register(as: PServiceA.self, injectable: .factory({ ServiceA() }))
     }
 }
@@ -152,7 +174,7 @@ or:
 ```swift
 struct Configurator {
     @Registered(inInjector: Environment.repositories)
-    var serviceBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
+    var repositoryBInjection = Injection<PRepositoryB>.factory({ RepositoryB() })
 
     @Registered(inInjector: Environment.services)
     var serviceAInjection = Injection<PServiceA>.singleton(ServiceA())

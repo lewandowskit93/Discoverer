@@ -8,6 +8,5 @@
 
 class Foo: PFoo {
     func foo() {
-        print("Foo")
     }
 }
